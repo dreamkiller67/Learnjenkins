@@ -35,7 +35,7 @@ pipeline {
         }
         
         
-        // Deploy stage starts here
+        // Deploy stage starts here.
         stage('Deploy') {
             steps {
                 // Deploy the Docker image to your environment (e.g., Kubernetes, Docker Swarm)
