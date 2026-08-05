@@ -24,13 +24,13 @@ pipeline {
  
         stage('mvn-package') {
             steps {
-               sh 'cd /var/lib/jenkins/workspace/RestApp/RestApp && mvn package'
+               sh 'cd ${WORKSPACE} && mvn package'
             }
         }
         
         stage('image-creation') {
             steps {
-                sh 'cd /var/lib/jenkins/workspace/RestApp/RestApp && docker build -t $IMAGE_NAME:${BUILD_NUMBER} -f Dockerfile .'
+                sh 'cd ${WORKSPACE} && docker build -t $IMAGE_NAME:${BUILD_NUMBER} -f Dockerfile .'
             }
         }
         
